@@ -1,0 +1,3 @@
+<div *ngFor="let p of people; let ide=index" class="alert alert-success" role="alert" (mouseenter) ="mouseEnter(ide)"  (mouseleave) ="mouseLeave()" [ngStyle]="{'background-color': hoverState == true && ideT == ide? 'black': '#dbf2e3'}">
+  <h4 class="alert-heading">Welcome sr. {{p.name}}</h4>
+</div>

@@ -1,0 +1,146 @@
+<nav class="navbar fixed-top navbar-dark bg-primary">
+    <a class="navbar-brand" href="http://localhost:4200">SpotiPlayer</a>
+    <ul class="nav nav-tabs bg-transparent border-0" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="Play-tab" data-toggle="tab" href="#Play" role="tab" aria-controls="Play" aria-selected="true">Play</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false">about</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="false">login</a>
+        </li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Música gratis. Millones de canciones.</h1>
+        <p class="lead">Escucha música en cualquier dispositivo. No necesitas tarjeta de crédito.</p>
+        <hr class="my-4">
+        <a class="btn btn-primary" href="#" role="button">
+            <i class="fas fa-step-backward"></i>
+        </a>
+        <!-- <a class="btn btn-primary" href="#" role="button"><i class="fas fa-pause"></i></a> -->
+        <a class="btn btn-primary" href="#" role="button">
+            <i class="fas fa-play"></i>
+        </a>
+        <a class="btn btn-primary" href="#" role="button">
+            <i class="fas fa-step-forward"></i>
+        </a>
+    </div>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <h1>Bienvenido</h1>
+        </div>
+        <div class="tab-pane fade" id="Play" role="tabpanel" aria-labelledby="Play-tab">
+            <div class="card-columns">
+                <div class="card">
+                    <img class="card-img-top" src="./assets/img/play.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title that wraps to a new line</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This
+                            content is a little bit longer.</p>
+                    </div>
+                </div>
+                <div class="card p-3">
+                    <blockquote class="blockquote mb-0 card-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        <footer class="blockquote-footer">
+                            <small class="text-muted">
+                                Someone famous in
+                                <cite title="Source Title">Source Title</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./assets/img/play.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-white text-center p-3">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+                        <footer class="blockquote-footer">
+                            <small>
+                                Someone famous in
+                                <cite title="Source Title">Source Title</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="card text-center">
+                    <div class="video">
+                        <video controls>
+                            <source src="{{videoSource}}" type="video/mp4" /> Browser not supported
+                        </video>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
+                        <p class="card-text">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="./assets/img/play.jpg" alt="Card image">
+                </div>
+                <div class="card p-3 text-right">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        <footer class="blockquote-footer">
+                            <small class="text-muted">
+                                Someone famous in
+                                <cite title="Source Title">Source Title</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is another card with title and supporting text below. This card has some additional content
+                            to make it slightly taller overall.</p>
+                        <p class="card-text">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+            <button type="button" class="btn btn-primary" (click)="toggleConfig(0);">Menu</button>
+            <button type="button" class="btn btn-secondary" (click)="toggleConfig(1);">jumbotron</button>
+            <button type="button" class="btn btn-success" (click)="toggleConfig(2);">Alerta</button>
+            <button type="button" class="btn btn-danger" (click)="toggleConfig(3);">Footer</button>
+            <app-menu *ngIf="config.panel==0"></app-menu>
+            <app-jumbotron *ngIf="config.panel==1"></app-jumbotron>
+            <app-alert *ngIf="config.panel==2"></app-alert>
+            <app-footer *ngIf="config.panel==3"></app-footer>
+        </div>
+        <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
+            {{login}}
+            <div class="card" *ngIf="login == false">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Login</h5>
+                    <input class="mr-1" placeholder="Usuario" type="text" [(ngModel)]="dataLogin.user">
+                    <input class="mr-1" placeholder="Contraseña" type="password" [(ngModel)]="dataLogin.password">
+                    <button (click)='validate();'>Iniciar Sesion</button>
+                </div>
+            </div>
+            <div class="alert alert-success" role="alert" *ngIf="login">
+                Bienvenido sr. {{dataLogin.user}}
+                <button type="button" class="btn btn-danger" (click)="logout();">Cerrar Sesion</button>
+            </div>
+        </div>
+    </div>
+</div>

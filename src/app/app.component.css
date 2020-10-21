@@ -1,0 +1,16 @@
+.container {
+    margin-top: 6.1em;
+    padding-top: 2em;
+}
+#myTabContent {
+    margin: 2em 0;
+}
+.nav-link {
+    color: white;
+}
+a.btn.btn-primary {
+    box-shadow: none!important;
+}
+video {
+    width: 100%;
+}
